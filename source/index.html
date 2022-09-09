@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Template</title>
+    <link rel="stylesheet" href="../assets/dist/output.css" />
+</head>
+
+<body class="bg-[#f5f7fb]">
+
+    <!------------------  Main Content  ------------------>
+    <section class="block container px-4 py-5">
+
+        <!-- Page Breadcrumb -->
+        <div class="PageBreadcrumb">
+            <ul class="flex justify-start items-center gap-3">
+                <li>
+                    <a href="#"
+                        class="text-black text-sm font-normal capitalize flex justify-start items-center group transition-all duration-300 ease-linear hover:text-primary">
+                        <span class="mr-2 inline-block">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-4 h-4">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+                            </svg>
+                        </span>
+                        home
+                    </a>
+                </li>
+                <li>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-4 h-4 leading-7">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                    </svg>
+
+                </li>
+                <li>
+                    <span class="text-gray-400 block text-sm font-normal">Listings</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Filter Section -->
+        <div class="FilterWrapper mt-10">
+            <div class="mt-5">
+                <div class="grid grid-cols-12 gap-5">
+                    <div class="col-span-4">
+                        <div class="Filter__Search-block">
+                            <div class="field relative">
+                                <input type="text" id="SearchFilter" placeholder="Search ..."
+                                    class="w-full px-4 py-3 pr-10 border rounded-lg shadow-sm border-gray-200 bg-white transition-all duration-350 ease-linear outline-none text-sm text-gray-500 focus:border-gray-500" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-span-2">
+                        <div class="Filter__Dropdown-block">
+                            <div class="block relative" x-data="{openDropdown: false}">
+                                <button type="button" @click="openDropdown = !openDropdown"
+                                    class="px-4 py-3 text-left w-full border rounded-lg shadow-sm border-gray-200 bg-white transition-all duration-350 ease-linear outline-none text-sm text-gray-500 focus:border-gray-500">Show
+                                    Filters</button>
+
+                                <span class="absolute top-1/2 -translate-y-1/2 right-3">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor"
+                                        class="w-4 h-4 text-gray-500 transition-all duration-400 ease-linear"
+                                        :class="openDropdown ? 'rotate-180': 'rotate-0'">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                                    </svg>
+
+                                </span>
+
+
+                                <!-- Dropdown With Static Values -->
+                                <div class="absolute w-full top-[110%] left-0 shadow-lg border border-gray-200 rounded-lg bg-white"
+                                    x-show="openDropdown" y-transition @click.away="openDropdown = false">
+                                    <ul class="Lists py-3">
+                                        <li
+                                            class="ListItems px-4 py-3 text-sm text-gray-500 cursor-pointer hover:bg-gray-100">
+                                            <a href="javascript:;">Property
+                                                Type</a>
+                                        </li>
+                                        <li
+                                            class="ListItems px-4 py-3 text-sm text-gray-500 cursor-pointer hover:bg-gray-100">
+                                            <a href="javascript:;">Family
+                                                House</a>
+                                        </li>
+                                        <li
+                                            class="ListItems px-4 py-3 text-sm text-gray-500 cursor-pointer hover:bg-gray-100">
+                                            <a href="javascript:;">Apartment</a>
+                                        </li>
+                                        <li
+                                            class="ListItems px-4 py-3 text-sm text-gray-500 cursor-pointer hover:bg-gray-100">
+                                            <a href="javascript:;">Rental
+                                                House </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" col-span-2">
+                        <div class="Filter__Dropdown-block">
+                            <div class="block relative" x-data="{openDropdown: false}">
+                                <button type="button" @click="openDropdown = !openDropdown"
+                                    class="px-4 py-3 text-left w-full border rounded-lg shadow-sm border-gray-200 bg-white transition-all duration-350 ease-linear outline-none text-sm text-gray-500 focus:border-gray-500">Show
+                                    Filters</button>
+
+                                <span class="absolute top-1/2 -translate-y-1/2 right-3">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor"
+                                        class="w-4 h-4 text-gray-500 transition-all duration-400 ease-linear"
+                                        :class="openDropdown ? 'rotate-180': 'rotate-0'">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                                    </svg>
+
+                                </span>
+
+
+                                <!-- Dropdown With Static Values -->
+                                <div class="absolute w-full top-[110%] left-0 shadow-lg border border-gray-200 rounded-lg bg-white"
+                                    x-show="openDropdown" y-transition @click.away="openDropdown = false">
+                                    <ul class="Lists py-3">
+                                        <li
+                                            class="ListItems px-4 py-3 text-sm text-gray-500 cursor-pointer hover:bg-gray-100">
+                                            <a href="javascript:;">Property
+                                                Type</a>
+                                        </li>
+                                        <li
+                                            class="ListItems px-4 py-3 text-sm text-gray-500 cursor-pointer hover:bg-gray-100">
+                                            <a href="javascript:;">Family
+                                                House</a>
+                                        </li>
+                                        <li
+                                            class="ListItems px-4 py-3 text-sm text-gray-500 cursor-pointer hover:bg-gray-100">
+                                            <a href="javascript:;">Apartment</a>
+                                        </li>
+                                        <li
+                                            class="ListItems px-4 py-3 text-sm text-gray-500 cursor-pointer hover:bg-gray-100">
+                                            <a href="javascript:;">Rental
+                                                House </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-span-2">
+                        <div class="Filter__Dropdown-block">
+                            <div class="block relative" x-data="{openDropdown: false}">
+                                <button type="button" @click="openDropdown = !openDropdown"
+                                    class="px-4 py-3 text-left w-full border rounded-lg shadow-sm border-gray-200 bg-white transition-all duration-350 ease-linear outline-none text-sm text-gray-500 focus:border-gray-500">Show
+                                    Filters</button>
+
+                                <span class="absolute top-1/2 -translate-y-1/2 right-3">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor"
+                                        class="w-4 h-4 text-gray-500 transition-all duration-400 ease-linear"
+                                        :class="openDropdown ? 'rotate-180': 'rotate-0'">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                                    </svg>
+
+                                </span>
+
+
+                                <!-- Dropdown With Static Values -->
+                                <div class="absolute w-full top-[110%] left-0 shadow-lg border border-gray-200 rounded-lg bg-white"
+                                    x-show="openDropdown" y-transition @click.away="openDropdown = false">
+                                    <ul class="Lists py-3">
+                                        <li
+                                            class="ListItems px-4 py-3 text-sm text-gray-500 cursor-pointer hover:bg-gray-100">
+                                            <a href="javascript:;">Property
+                                                Type</a>
+                                        </li>
+                                        <li
+                                            class="ListItems px-4 py-3 text-sm text-gray-500 cursor-pointer hover:bg-gray-100">
+                                            <a href="javascript:;">Family
+                                                House</a>
+                                        </li>
+                                        <li
+                                            class="ListItems px-4 py-3 text-sm text-gray-500 cursor-pointer hover:bg-gray-100">
+                                            <a href="javascript:;">Apartment</a>
+                                        </li>
+                                        <li
+                                            class="ListItems px-4 py-3 text-sm text-gray-500 cursor-pointer hover:bg-gray-100">
+                                            <a href="javascript:;">Rental
+                                                House </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-span-2">
+                        <button type="button"
+                            class="w-full px-4 py-3 border rounded-lg shadow-sm border-gray-200 bg-[#FF385C] font-medium text-white transition-all duration-350 ease-linear outline-none text-sm">
+                            Search Now!
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sorting Section -->
+        <div class="PageToolbar__sort mt-20">
+            <div class="flex justify-between items-center">
+
+                <div class="LeftSection ">
+                    <div class="SearchedResults text-gray-500 font-medium text-sm"><span class="ResultCount">26</span>
+                        Search
+                        results</div>
+                </div>
+
+                <div class="RightSection">
+
+                    <div class="relative flex justify-between items-center px-4 py-2 rounded-lg text-sm font-normal "
+                        x-data="{openSort: false}">
+                        <span
+                            class="text-sm font-semibold text-gray-700 uppercase flex justify-between items-center gap-2">
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-5 h-5 font-semibold">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M3.75 6.75h16.5M3.75 12h16.5M12 17.25h8.25" />
+                                </svg>
+                            </span>
+                            Sortby:
+                        </span>
+                        <button type="button" @click="openSort = !openSort"
+                            class="w-full ml-2 pr-6 bg-transparent transition-all duration-350 ease-linear outline-none text-sm text-gray-500 focus:border-gray-500">Top
+                            Selling</button>
+                        <span class="absolute top-1/2 -translate-y-1/2 right-3" @click="openSort = !openSort">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor"
+                                class="w-4 h-4 text-gray-500 transition-all duration-400 ease-linear"
+                                :class="openSort ? 'rotate-180': 'rotate-0'">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                            </svg>
+
+                        </span>
+
+                        <!-- Sorting Dropdown -->
+                        <div class="absolute w-full top-[110%] left-0 shadow-lg border border-gray-200 rounded-lg bg-white"
+                            x-show="openSort" y-transition @click.away="openSort = false">
+                            <ul class="Lists py-3">
+                                <li class="ListItems px-4 py-3 text-sm text-gray-500 cursor-pointer hover:bg-gray-100">
+                                    <a href="javascript:;">Property
+                                        Type</a>
+                                </li>
+                                <li class="ListItems px-4 py-3 text-sm text-gray-500 cursor-pointer hover:bg-gray-100">
+                                    <a href="javascript:;">Family
+                                        House</a>
+                                </li>
+                                <li class="ListItems px-4 py-3 text-sm text-gray-500 cursor-pointer hover:bg-gray-100">
+                                    <a href="javascript:;">Apartment</a>
+                                </li>
+                                <li class="ListItems px-4 py-3 text-sm text-gray-500 cursor-pointer hover:bg-gray-100">
+                                    <a href="javascript:;">Rental
+                                        House </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- Listing Section -->
+
+        <div class="ListingCardSection">
+            <div class="mt-8 mb-5 md:mt-5">
+
+                <ul class="CardLists grid grid-cols-3 gap-5">
+                    <li class="CardList">
+
+                        <!-- Card -->
+                        <div class="CustomCard border border-gray-200 rounded overflow-hidden shadow-sm bg-white">
+
+                            <div class="CustomCardImage relative">
+                                <img src="../assets/media/list-image.jpg" alt="List Thumbnail" class="aspect-auto" />
+
+                                <div
+                                    class="CustomCardTextContent absolute bottom-0 left-0 w-full bg-black bg-opacity-60 px-5 py-4">
+                                    <h3 class="CardTitle text-white text-2xl font-semibold">Jessica K</h3>
+                                    <p class="CardAbout text-white text-opacity-80 text-sm font-medium">Chennai (<span
+                                            class="CardAbout">Offline or Online</span>)</p>
+                                </div>
+
+                            </div>
+
+                            <div class="CustomCardBody grid grid-cols-2 items-center px-5 py-3">
+                                <div class="col-span-1">
+                                    <span class="flex justify-start items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="#FFB500" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="#FFB500" class="w-5 h-5 ">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
+                                        </svg>
+                                        <span class="CardRatingCount text-gray-700 font-medium mx-1">5</span>
+                                        <span class="CardReviewsCount text-sm text-gray-500 font-medium">(29
+                                            Reviews)</span>
+                                    </span>
+                                </div>
+
+                                <div class="col-span-1">
+                                    <span class="flex justify-end items-center text-sm text-gray-500 font-medium">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mx-1">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
+                                        </svg>
+                                        Ambassadar
+                                    </span>
+                                </div>
+
+                                <div class="col-span-2 my-3 border-b border-gray-200">
+                                </div>
+                                <div class="col-span-2 text-sm text-gray-500">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, deleniti, ut saepe
+                                    magni iure optio nesciunt ducimus ullam aut illo dolores provident aliquid.
+                                </div>
+                                <div class="col-span-2 my-3 border-b border-gray-200">
+                                </div>
+                                <div class="CustomCardBadges col-span-2">
+                                    <ul class="BadgesLists flex justify-start items-start flex-wrap gap-1">
+                                        <li class="BadegList"><span
+                                                class="bg-yellow-100 text-yellow-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-200 dark:text-yellow-900">Yellow</span>
+                                        </li>
+                                        <li class="BadegList"><span
+                                                class="bg-yellow-100 text-yellow-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-200 dark:text-yellow-900">Yellow</span>
+                                        </li>
+                                        <li class="BadegList"><span
+                                                class="bg-yellow-100 text-yellow-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-200 dark:text-yellow-900">Yellow</span>
+                                        </li>
+                                        <li class="BadegList"><span
+                                                class="bg-yellow-100 text-yellow-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-200 dark:text-yellow-900">Yellow</span>
+                                        </li>
+                                        <li class="BadegList"><span
+                                                class="bg-yellow-100 text-yellow-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-200 dark:text-yellow-900">Yellow</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                    </li>
+                    <li class="CardList">
+
+                        <!-- Card -->
+                        <div class="CustomCard border border-gray-200 rounded overflow-hidden shadow-sm bg-white">
+
+                            <div class="CustomCardImage relative">
+                                <img src="../assets/media/list-image.jpg" alt="List Thumbnail" class="aspect-auto" />
+
+                                <div
+                                    class="CustomCardTextContent absolute bottom-0 left-0 w-full bg-black bg-opacity-60 px-5 py-4">
+                                    <h3 class="CardTitle text-white text-2xl font-semibold">Jessica K</h3>
+                                    <p class="CardAbout text-white text-opacity-80 text-sm font-medium">Chennai (<span
+                                            class="CardAbout">Offline or Online</span>)</p>
+                                </div>
+
+                            </div>
+
+                            <div class="CustomCardBody grid grid-cols-2 items-center px-5 py-3">
+                                <div class="col-span-1">
+                                    <span class="flex justify-start items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="#FFB500" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="#FFB500" class="w-5 h-5 ">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
+                                        </svg>
+                                        <span class="CardRatingCount text-gray-700 font-medium mx-1">5</span>
+                                        <span class="CardReviewsCount text-sm text-gray-500 font-medium">(29
+                                            Reviews)</span>
+                                    </span>
+                                </div>
+
+                                <div class="col-span-1">
+                                    <span class="flex justify-end items-center text-sm text-gray-500 font-medium">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mx-1">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
+                                        </svg>
+                                        Ambassadar
+                                    </span>
+                                </div>
+
+                                <div class="col-span-2 my-3 border-b border-gray-200">
+                                </div>
+                                <div class="col-span-2 text-sm text-gray-500">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, deleniti, ut saepe
+                                    magni iure optio nesciunt ducimus ullam aut illo dolores provident aliquid.
+                                </div>
+                                <div class="col-span-2 my-3 border-b border-gray-200">
+                                </div>
+                                <div class="CustomCardBadges col-span-2">
+                                    <ul class="BadgesLists flex justify-start items-start flex-wrap gap-1">
+                                        <li class="BadegList"><span
+                                                class="bg-yellow-100 text-yellow-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-200 dark:text-yellow-900">Yellow</span>
+                                        </li>
+                                        <li class="BadegList"><span
+                                                class="bg-yellow-100 text-yellow-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-200 dark:text-yellow-900">Yellow</span>
+                                        </li>
+                                        <li class="BadegList"><span
+                                                class="bg-yellow-100 text-yellow-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-200 dark:text-yellow-900">Yellow</span>
+                                        </li>
+                                        <li class="BadegList"><span
+                                                class="bg-yellow-100 text-yellow-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-200 dark:text-yellow-900">Yellow</span>
+                                        </li>
+                                        <li class="BadegList"><span
+                                                class="bg-yellow-100 text-yellow-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-200 dark:text-yellow-900">Yellow</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                    </li>
+                    <li class="CardList">
+
+                        <!-- Card -->
+                        <div class="CustomCard border border-gray-200 rounded overflow-hidden shadow-sm bg-white">
+
+                            <div class="CustomCardImage relative">
+                                <img src="../assets/media/list-image.jpg" alt="List Thumbnail" class="aspect-auto" />
+
+                                <div
+                                    class="CustomCardTextContent absolute bottom-0 left-0 w-full bg-black bg-opacity-60 px-5 py-4">
+                                    <h3 class="CardTitle text-white text-2xl font-semibold">Jessica K</h3>
+                                    <p class="CardAbout text-white text-opacity-80 text-sm font-medium">Chennai (<span
+                                            class="CardAbout">Offline or Online</span>)</p>
+                                </div>
+
+                            </div>
+
+                            <div class="CustomCardBody grid grid-cols-2 items-center px-5 py-3">
+                                <div class="col-span-1">
+                                    <span class="flex justify-start items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="#FFB500" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="#FFB500" class="w-5 h-5 ">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
+                                        </svg>
+                                        <span class="CardRatingCount text-gray-700 font-medium mx-1">5</span>
+                                        <span class="CardReviewsCount text-sm text-gray-500 font-medium">(29
+                                            Reviews)</span>
+                                    </span>
+                                </div>
+
+                                <div class="col-span-1">
+                                    <span class="flex justify-end items-center text-sm text-gray-500 font-medium">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mx-1">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
+                                        </svg>
+                                        Ambassadar
+                                    </span>
+                                </div>
+
+                                <div class="col-span-2 my-3 border-b border-gray-200">
+                                </div>
+                                <div class="col-span-2 text-sm text-gray-500">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, deleniti, ut saepe
+                                    magni iure optio nesciunt ducimus ullam aut illo dolores provident aliquid.
+                                </div>
+                                <div class="col-span-2 my-3 border-b border-gray-200">
+                                </div>
+                                <div class="CustomCardBadges col-span-2">
+                                    <ul class="BadgesLists flex justify-start items-start flex-wrap gap-1">
+                                        <li class="BadegList"><span
+                                                class="bg-yellow-100 text-yellow-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-200 dark:text-yellow-900">Yellow</span>
+                                        </li>
+                                        <li class="BadegList"><span
+                                                class="bg-yellow-100 text-yellow-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-200 dark:text-yellow-900">Yellow</span>
+                                        </li>
+                                        <li class="BadegList"><span
+                                                class="bg-yellow-100 text-yellow-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-200 dark:text-yellow-900">Yellow</span>
+                                        </li>
+                                        <li class="BadegList"><span
+                                                class="bg-yellow-100 text-yellow-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-200 dark:text-yellow-900">Yellow</span>
+                                        </li>
+                                        <li class="BadegList"><span
+                                                class="bg-yellow-100 text-yellow-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-200 dark:text-yellow-900">Yellow</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                    </li>
+                    <li class="CardList">
+
+                        <!-- Card -->
+                        <div class="CustomCard border border-gray-200 rounded overflow-hidden shadow-sm bg-white">
+
+                            <div class="CustomCardImage relative">
+                                <img src="../assets/media/list-image.jpg" alt="List Thumbnail" class="aspect-auto" />
+
+                                <div
+                                    class="CustomCardTextContent absolute bottom-0 left-0 w-full bg-black bg-opacity-60 px-5 py-4">
+                                    <h3 class="CardTitle text-white text-2xl font-semibold">Jessica K</h3>
+                                    <p class="CardAbout text-white text-opacity-80 text-sm font-medium">Chennai (<span
+                                            class="CardAbout">Offline or Online</span>)</p>
+                                </div>
+
+                            </div>
+
+                            <div class="CustomCardBody grid grid-cols-2 items-center px-5 py-3">
+                                <div class="col-span-1">
+                                    <span class="flex justify-start items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="#FFB500" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="#FFB500" class="w-5 h-5 ">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
+                                        </svg>
+                                        <span class="CardRatingCount text-gray-700 font-medium mx-1">5</span>
+                                        <span class="CardReviewsCount text-sm text-gray-500 font-medium">(29
+                                            Reviews)</span>
+                                    </span>
+                                </div>
+
+                                <div class="col-span-1">
+                                    <span class="flex justify-end items-center text-sm text-gray-500 font-medium">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mx-1">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
+                                        </svg>
+                                        Ambassadar
+                                    </span>
+                                </div>
+
+                                <div class="col-span-2 my-3 border-b border-gray-200">
+                                </div>
+                                <div class="col-span-2 text-sm text-gray-500">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, deleniti, ut saepe
+                                    magni iure optio nesciunt ducimus ullam aut illo dolores provident aliquid.
+                                </div>
+                                <div class="col-span-2 my-3 border-b border-gray-200">
+                                </div>
+                                <div class="CustomCardBadges col-span-2">
+                                    <ul class="BadgesLists flex justify-start items-start flex-wrap gap-1">
+                                        <li class="BadegList"><span
+                                                class="bg-yellow-100 text-yellow-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-200 dark:text-yellow-900">Yellow</span>
+                                        </li>
+                                        <li class="BadegList"><span
+                                                class="bg-yellow-100 text-yellow-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-200 dark:text-yellow-900">Yellow</span>
+                                        </li>
+                                        <li class="BadegList"><span
+                                                class="bg-yellow-100 text-yellow-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-200 dark:text-yellow-900">Yellow</span>
+                                        </li>
+                                        <li class="BadegList"><span
+                                                class="bg-yellow-100 text-yellow-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-200 dark:text-yellow-900">Yellow</span>
+                                        </li>
+                                        <li class="BadegList"><span
+                                                class="bg-yellow-100 text-yellow-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-200 dark:text-yellow-900">Yellow</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                    </li>
+                    <li class="CardList">
+
+                        <!-- Card -->
+                        <div class="CustomCard border border-gray-200 rounded overflow-hidden shadow-sm bg-white">
+
+                            <div class="CustomCardImage relative">
+                                <img src="../assets/media/list-image.jpg" alt="List Thumbnail" class="aspect-auto" />
+
+                                <div
+                                    class="CustomCardTextContent absolute bottom-0 left-0 w-full bg-black bg-opacity-60 px-5 py-4">
+                                    <h3 class="CardTitle text-white text-2xl font-semibold">Jessica K</h3>
+                                    <p class="CardAbout text-white text-opacity-80 text-sm font-medium">Chennai (<span
+                                            class="CardAbout">Offline or Online</span>)</p>
+                                </div>
+
+                            </div>
+
+                            <div class="CustomCardBody grid grid-cols-2 items-center px-5 py-3">
+                                <div class="col-span-1">
+                                    <span class="flex justify-start items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="#FFB500" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="#FFB500" class="w-5 h-5 ">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
+                                        </svg>
+                                        <span class="CardRatingCount text-gray-700 font-medium mx-1">5</span>
+                                        <span class="CardReviewsCount text-sm text-gray-500 font-medium">(29
+                                            Reviews)</span>
+                                    </span>
+                                </div>
+
+                                <div class="col-span-1">
+                                    <span class="flex justify-end items-center text-sm text-gray-500 font-medium">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mx-1">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
+                                        </svg>
+                                        Ambassadar
+                                    </span>
+                                </div>
+
+                                <div class="col-span-2 my-3 border-b border-gray-200">
+                                </div>
+                                <div class="col-span-2 text-sm text-gray-500">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, deleniti, ut saepe
+                                    magni iure optio nesciunt ducimus ullam aut illo dolores provident aliquid.
+                                </div>
+                                <div class="col-span-2 my-3 border-b border-gray-200">
+                                </div>
+                                <div class="CustomCardBadges col-span-2">
+                                    <ul class="BadgesLists flex justify-start items-start flex-wrap gap-1">
+                                        <li class="BadegList"><span
+                                                class="bg-yellow-100 text-yellow-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-200 dark:text-yellow-900">Yellow</span>
+                                        </li>
+                                        <li class="BadegList"><span
+                                                class="bg-yellow-100 text-yellow-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-200 dark:text-yellow-900">Yellow</span>
+                                        </li>
+                                        <li class="BadegList"><span
+                                                class="bg-yellow-100 text-yellow-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-200 dark:text-yellow-900">Yellow</span>
+                                        </li>
+                                        <li class="BadegList"><span
+                                                class="bg-yellow-100 text-yellow-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-200 dark:text-yellow-900">Yellow</span>
+                                        </li>
+                                        <li class="BadegList"><span
+                                                class="bg-yellow-100 text-yellow-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-200 dark:text-yellow-900">Yellow</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                    </li>
+                    <li class="CardList">
+
+                        <!-- Card -->
+                        <div class="CustomCard border border-gray-200 rounded overflow-hidden shadow-sm bg-white">
+
+                            <div class="CustomCardImage relative">
+                                <img src="../assets/media/list-image.jpg" alt="List Thumbnail" class="aspect-auto" />
+
+                                <div
+                                    class="CustomCardTextContent absolute bottom-0 left-0 w-full bg-black bg-opacity-60 px-5 py-4">
+                                    <h3 class="CardTitle text-white text-2xl font-semibold">Jessica K</h3>
+                                    <p class="CardAbout text-white text-opacity-80 text-sm font-medium">Chennai (<span
+                                            class="CardAbout">Offline or Online</span>)</p>
+                                </div>
+
+                            </div>
+
+                            <div class="CustomCardBody grid grid-cols-2 items-center px-5 py-3">
+                                <div class="col-span-1">
+                                    <span class="flex justify-start items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="#FFB500" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="#FFB500" class="w-5 h-5 ">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
+                                        </svg>
+                                        <span class="CardRatingCount text-gray-700 font-medium mx-1">5</span>
+                                        <span class="CardReviewsCount text-sm text-gray-500 font-medium">(29
+                                            Reviews)</span>
+                                    </span>
+                                </div>
+
+                                <div class="col-span-1">
+                                    <span class="flex justify-end items-center text-sm text-gray-500 font-medium">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mx-1">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
+                                        </svg>
+                                        Ambassadar
+                                    </span>
+                                </div>
+
+                                <div class="col-span-2 my-3 border-b border-gray-200">
+                                </div>
+                                <div class="col-span-2 text-sm text-gray-500">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, deleniti, ut saepe
+                                    magni iure optio nesciunt ducimus ullam aut illo dolores provident aliquid.
+                                </div>
+                                <div class="col-span-2 my-3 border-b border-gray-200">
+                                </div>
+                                <div class="CustomCardBadges col-span-2">
+                                    <ul class="BadgesLists flex justify-start items-start flex-wrap gap-1">
+                                        <li class="BadegList"><span
+                                                class="bg-yellow-100 text-yellow-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-200 dark:text-yellow-900">Yellow</span>
+                                        </li>
+                                        <li class="BadegList"><span
+                                                class="bg-yellow-100 text-yellow-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-200 dark:text-yellow-900">Yellow</span>
+                                        </li>
+                                        <li class="BadegList"><span
+                                                class="bg-yellow-100 text-yellow-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-200 dark:text-yellow-900">Yellow</span>
+                                        </li>
+                                        <li class="BadegList"><span
+                                                class="bg-yellow-100 text-yellow-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-200 dark:text-yellow-900">Yellow</span>
+                                        </li>
+                                        <li class="BadegList"><span
+                                                class="bg-yellow-100 text-yellow-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-200 dark:text-yellow-900">Yellow</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                    </li>
+                    <li class="CardList">
+
+                        <!-- Card -->
+                        <div class="CustomCard border border-gray-200 rounded overflow-hidden shadow-sm bg-white">
+
+                            <div class="CustomCardImage relative">
+                                <img src="../assets/media/list-image.jpg" alt="List Thumbnail" class="aspect-auto" />
+
+                                <div
+                                    class="CustomCardTextContent absolute bottom-0 left-0 w-full bg-black bg-opacity-60 px-5 py-4">
+                                    <h3 class="CardTitle text-white text-2xl font-semibold">Jessica K</h3>
+                                    <p class="CardAbout text-white text-opacity-80 text-sm font-medium">Chennai (<span
+                                            class="CardAbout">Offline or Online</span>)</p>
+                                </div>
+
+                            </div>
+
+                            <div class="CustomCardBody grid grid-cols-2 items-center px-5 py-3">
+                                <div class="col-span-1">
+                                    <span class="flex justify-start items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="#FFB500" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="#FFB500" class="w-5 h-5 ">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
+                                        </svg>
+                                        <span class="CardRatingCount text-gray-700 font-medium mx-1">5</span>
+                                        <span class="CardReviewsCount text-sm text-gray-500 font-medium">(29
+                                            Reviews)</span>
+                                    </span>
+                                </div>
+
+                                <div class="col-span-1">
+                                    <span class="flex justify-end items-center text-sm text-gray-500 font-medium">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mx-1">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
+                                        </svg>
+                                        Ambassadar
+                                    </span>
+                                </div>
+
+                                <div class="col-span-2 my-3 border-b border-gray-200">
+                                </div>
+                                <div class="col-span-2 text-sm text-gray-500">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, deleniti, ut saepe
+                                    magni iure optio nesciunt ducimus ullam aut illo dolores provident aliquid.
+                                </div>
+                                <div class="col-span-2 my-3 border-b border-gray-200">
+                                </div>
+                                <div class="CustomCardBadges col-span-2">
+                                    <ul class="BadgesLists flex justify-start items-start flex-wrap gap-1">
+                                        <li class="BadegList"><span
+                                                class="bg-yellow-100 text-yellow-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-200 dark:text-yellow-900">Yellow</span>
+                                        </li>
+                                        <li class="BadegList"><span
+                                                class="bg-yellow-100 text-yellow-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-200 dark:text-yellow-900">Yellow</span>
+                                        </li>
+                                        <li class="BadegList"><span
+                                                class="bg-yellow-100 text-yellow-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-200 dark:text-yellow-900">Yellow</span>
+                                        </li>
+                                        <li class="BadegList"><span
+                                                class="bg-yellow-100 text-yellow-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-200 dark:text-yellow-900">Yellow</span>
+                                        </li>
+                                        <li class="BadegList"><span
+                                                class="bg-yellow-100 text-yellow-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-200 dark:text-yellow-900">Yellow</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                    </li>
+                    <li class="CardList">
+
+                        <!-- Card -->
+                        <div class="CustomCard border border-gray-200 rounded overflow-hidden shadow-sm bg-white">
+
+                            <div class="CustomCardImage relative">
+                                <img src="../assets/media/list-image.jpg" alt="List Thumbnail" class="aspect-auto" />
+
+                                <div
+                                    class="CustomCardTextContent absolute bottom-0 left-0 w-full bg-black bg-opacity-60 px-5 py-4">
+                                    <h3 class="CardTitle text-white text-2xl font-semibold">Jessica K</h3>
+                                    <p class="CardAbout text-white text-opacity-80 text-sm font-medium">Chennai (<span
+                                            class="CardAbout">Offline or Online</span>)</p>
+                                </div>
+
+                            </div>
+
+                            <div class="CustomCardBody grid grid-cols-2 items-center px-5 py-3">
+                                <div class="col-span-1">
+                                    <span class="flex justify-start items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="#FFB500" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="#FFB500" class="w-5 h-5 ">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
+                                        </svg>
+                                        <span class="CardRatingCount text-gray-700 font-medium mx-1">5</span>
+                                        <span class="CardReviewsCount text-sm text-gray-500 font-medium">(29
+                                            Reviews)</span>
+                                    </span>
+                                </div>
+
+                                <div class="col-span-1">
+                                    <span class="flex justify-end items-center text-sm text-gray-500 font-medium">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mx-1">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
+                                        </svg>
+                                        Ambassadar
+                                    </span>
+                                </div>
+
+                                <div class="col-span-2 my-3 border-b border-gray-200">
+                                </div>
+                                <div class="col-span-2 text-sm text-gray-500">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, deleniti, ut saepe
+                                    magni iure optio nesciunt ducimus ullam aut illo dolores provident aliquid.
+                                </div>
+                                <div class="col-span-2 my-3 border-b border-gray-200">
+                                </div>
+                                <div class="CustomCardBadges col-span-2">
+                                    <ul class="BadgesLists flex justify-start items-start flex-wrap gap-1">
+                                        <li class="BadegList"><span
+                                                class="bg-yellow-100 text-yellow-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-200 dark:text-yellow-900">Yellow</span>
+                                        </li>
+                                        <li class="BadegList"><span
+                                                class="bg-yellow-100 text-yellow-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-200 dark:text-yellow-900">Yellow</span>
+                                        </li>
+                                        <li class="BadegList"><span
+                                                class="bg-yellow-100 text-yellow-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-200 dark:text-yellow-900">Yellow</span>
+                                        </li>
+                                        <li class="BadegList"><span
+                                                class="bg-yellow-100 text-yellow-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-200 dark:text-yellow-900">Yellow</span>
+                                        </li>
+                                        <li class="BadegList"><span
+                                                class="bg-yellow-100 text-yellow-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-200 dark:text-yellow-900">Yellow</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+
+
+
+    </section>
+
+
+    <script defer src=" ../assets/js/alpine.js"></script>
+    <script defer src="../assets/js/index.js"></script>
+
+</body>
+
+</html>
